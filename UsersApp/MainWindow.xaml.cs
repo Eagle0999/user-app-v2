@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace UsersApp
 {
@@ -26,6 +27,12 @@ namespace UsersApp
             InitializeComponent();
 
             db = new AppContext();
+
+            DoubleAnimation textAnimation = new DoubleAnimation();
+            textAnimation.From = 0;
+            textAnimation.To = 30;
+            textAnimation.Duration = TimeSpan.FromSeconds(3);
+            TitleText.BeginAnimation(TextBlock.FontSizeProperty, textAnimation);
         }
 
         private void ButtonReggClick(object sender, RoutedEventArgs e)

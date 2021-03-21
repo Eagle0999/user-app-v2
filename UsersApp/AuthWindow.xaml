@@ -7,13 +7,25 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Приложение для пользователей" Height="450" Width="650">
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard TargetProperty="FontSize" TargetName="HelloText">
+                        <DoubleAnimation From="0" To="30" 
+                                         Duration="0:0:5"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid Background="#FADBC8">
         <Border MinWidth="400" Margin="60" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="60" Color="Black" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Добро пожаловать!" FontSize="30" FontWeight="Bold"  Margin="0 0 0 20"></TextBlock>
+                <TextBlock x:Name="HelloText" Text="Добро пожаловать!" FontSize="30" FontWeight="Bold"  Margin="0 0 0 20"></TextBlock>
 
                 <Grid Margin="0 0 0 20">
                     <Button HorizontalAlignment="Left" Click="ButtonRegClick" Content="Регистрация" />
