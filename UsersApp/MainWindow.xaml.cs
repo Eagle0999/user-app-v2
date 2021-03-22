@@ -77,8 +77,8 @@ namespace UsersApp
                 textBoxRepPassword.Background = Brushes.Transparent;
                 textBoxEmail.ToolTip = "";
                 textBoxRepPassword.Background = Brushes.Transparent;
-                MessageBox.Show("Вы были успешно зарегестрированны!");
-                                    
+                MessageBox.Show("Регистрация прошла успешно!");
+
                 User user = new User(login, password, email);
                
                 db.Users.Add(user);
