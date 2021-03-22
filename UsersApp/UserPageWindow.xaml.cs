@@ -25,7 +25,6 @@ namespace UsersApp
             AppContext db = new AppContext();
             List<User> users = db.Users.ToList();
             ListOfView.ItemsSource = users;
-
         }
     }
 }
